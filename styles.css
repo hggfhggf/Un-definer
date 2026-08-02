@@ -1,0 +1,82 @@
+.undefiner-wrap {
+  overflow: visible;
+  position: relative;
+}
+
+.undefiner-wrap .undefiner-code {
+  padding-left: 34px !important;
+  white-space: pre !important;
+}
+
+.undefiner-rich-wrap {
+  padding-left: 30px;
+}
+
+.undefiner-wrap .undefiner-rich {
+  padding-left: 0 !important;
+}
+
+.undefiner-rich li {
+  min-height: 1.35em;
+  position: relative;
+}
+
+.undefiner-rich .undefiner-define-line {
+  padding-left: 0 !important;
+}
+
+.undefiner-line-content {
+  white-space: pre;
+}
+
+.undefiner-rich li.undefiner-line-changed {
+  background: rgba(255, 224, 130, 0.38) !important;
+}
+
+.undefiner-rich li.undefiner-line-hidden {
+  min-height: 1.35em;
+}
+
+.undefiner-rich li.undefiner-line-hidden .undefiner-line-content {
+  visibility: hidden;
+}
+
+.undefiner-gutter {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 28px;
+  z-index: 20;
+}
+
+.undefiner-toggle {
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font: 700 14px/1 Arial, sans-serif;
+  height: 18px;
+  justify-content: center;
+  left: 5px;
+  padding: 0;
+  pointer-events: auto;
+  position: absolute;
+  width: 18px;
+}
+
+.undefiner-toggle[aria-pressed="false"] {
+  background: #d93025;
+}
+
+.undefiner-toggle[aria-pressed="true"] {
+  background: #188038;
+}
+
+.undefiner-toggle:hover {
+  filter: brightness(0.94);
+}
