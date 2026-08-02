@@ -33,12 +33,10 @@
   background: rgba(255, 224, 130, 0.38) !important;
 }
 
-.undefiner-rich li.undefiner-line-hidden {
-  min-height: 1.35em;
-}
-
-.undefiner-rich li.undefiner-line-hidden .undefiner-line-content {
-  visibility: hidden;
+.undefiner-rich li.undefiner-line-disabled .undefiner-line-content {
+  opacity: 0.58;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
 }
 
 .undefiner-gutter {
@@ -69,12 +67,20 @@
   width: 18px;
 }
 
-.undefiner-toggle[aria-pressed="false"] {
+.undefiner-toggle-define[aria-pressed="false"] {
   background: #d93025;
 }
 
-.undefiner-toggle[aria-pressed="true"] {
+.undefiner-toggle-define[aria-pressed="true"] {
   background: #188038;
+}
+
+.undefiner-toggle-typedef[aria-pressed="false"] {
+  background: #f29900;
+}
+
+.undefiner-toggle-typedef[aria-pressed="true"] {
+  background: #1a73e8;
 }
 
 .undefiner-toggle:hover {
