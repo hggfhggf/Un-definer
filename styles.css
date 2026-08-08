@@ -29,6 +29,32 @@
   white-space: pre;
 }
 
+.undefiner-line-content .com {
+  color: #800;
+}
+
+.undefiner-line-content .kwd {
+  color: #008;
+  font-weight: 700;
+}
+
+.undefiner-line-content .lit {
+  color: #066;
+}
+
+.undefiner-line-content .pun {
+  color: #660;
+}
+
+.undefiner-line-content .str {
+  color: #080;
+}
+
+.undefiner-line-content .typ {
+  color: #606;
+  font-weight: 700;
+}
+
 .undefiner-rich li.undefiner-line-changed {
   background: rgba(255, 224, 130, 0.38) !important;
 }

@@ -14,6 +14,83 @@
   ].join(",");
 
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const KEYWORDS = new Set([
+    "alignas", "alignof", "and", "asm", "auto", "bitand", "bitor", "bool", "break",
+    "case", "catch", "char", "class", "compl", "const", "constexpr", "continue",
+    "decltype", "default", "delete", "do", "double", "else", "enum", "explicit",
+    "extern", "false", "float", "for", "friend", "goto", "if", "inline", "int",
+    "long", "mutable", "namespace", "new", "noexcept", "not", "nullptr", "operator",
+    "or", "private", "protected", "public", "register", "return", "short", "signed",
+    "sizeof", "static", "struct", "switch", "template", "this", "throw", "true",
+    "try", "typedef", "typename", "union", "unsigned", "using", "virtual", "void",
+    "volatile", "while", "xor"
+  ]);
+  const TYPES = new Set([
+    "int64_t", "int32_t", "uint64_t", "uint32_t", "size_t", "string", "vector",
+    "pair", "map", "set", "multiset", "unordered_map", "unordered_set", "queue",
+    "deque", "stack", "priority_queue", "bitset"
+  ]);
+
+  function appendSpan(fragment, className, text) {
+    const span = document.createElement("span");
+    span.className = className;
+    span.textContent = text;
+    fragment.appendChild(span);
+  }
+
+  function highlightCodeLine(line) {
+    const fragment = document.createDocumentFragment();
+    let index = 0;
+
+    while (index < line.length) {
+      const rest = line.slice(index);
+
+      const comment = rest.match(/^\/\/.*/);
+      if (comment) {
+        appendSpan(fragment, "com", comment[0]);
+        break;
+      }
+
+      const stringLiteral = rest.match(/^("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*')/);
+      if (stringLiteral) {
+        appendSpan(fragment, "str", stringLiteral[0]);
+        index += stringLiteral[0].length;
+        continue;
+      }
+
+      const number = rest.match(/^(?:0x[0-9a-fA-F]+|\d+(?:\.\d+)?)(?:[uUlLfF]*)/);
+      if (number) {
+        appendSpan(fragment, "lit", number[0]);
+        index += number[0].length;
+        continue;
+      }
+
+      const word = rest.match(/^[A-Za-z_]\w*/);
+      if (word) {
+        const value = word[0];
+        const className = KEYWORDS.has(value)
+          ? "kwd"
+          : TYPES.has(value) || /^[A-Z]\w*$/.test(value)
+            ? "typ"
+            : "pln";
+        appendSpan(fragment, className, value);
+        index += value.length;
+        continue;
+      }
+
+      const punct = rest.match(/^[{}()[\];,.<>+\-*/%=&|!?:~^]+/);
+      if (punct) {
+        appendSpan(fragment, "pun", punct[0]);
+        index += punct[0].length;
+        continue;
+      }
+
+      appendSpan(fragment, "pln", line[index]);
+      index += 1;
+    }
+
+    return fragment;
+  }
 
   function getLineNodes(node) {
     const list = node.querySelector(":scope > ol.linenums");
@@ -197,7 +274,7 @@
       if (nextText === line.originalText) {
         line.content.innerHTML = line.originalHtml;
       } else {
-        line.content.textContent = nextText;
+        line.content.replaceChildren(highlightCodeLine(nextText));
       }
 
       line.node.classList.toggle("undefiner-line-disabled", disabledDefine);
