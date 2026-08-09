@@ -1,4 +1,4 @@
-# Un-definer
+# Codeforces Un-definer
 
 Primitive Chrome/Chromium extension for Codeforces pages.
 

@@ -1,4 +1,4 @@
-# Privacy Policy for Un-definer
+# Privacy Policy for Codeforces Un-definer
 
 Un-definer does not collect, store, sell, share, or transmit user data.
 

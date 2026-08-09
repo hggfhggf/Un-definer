@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Un-definer",
+  "name": "Codeforces Un-definer",
   "version": "0.1.8",
   "description": "Toggle Codeforces #define macros inline.",
   "content_scripts": [
