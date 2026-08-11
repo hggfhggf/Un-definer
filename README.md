@@ -1,3 +1,5 @@
+Codeforces blog link: [https://codeforces.com/blog/entry/155863]
+
 # Codeforces Un-definer
 
 
