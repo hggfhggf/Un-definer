@@ -1,0 +1,136 @@
+.undefiner-wrap {
+  overflow: visible;
+  position: relative;
+}
+
+.undefiner-wrap .undefiner-code {
+  padding-left: 34px !important;
+  white-space: pre !important;
+}
+
+.undefiner-rich-wrap {
+  padding-left: 30px;
+}
+
+.undefiner-wrap .undefiner-rich {
+  padding-left: 0 !important;
+}
+
+.undefiner-rich li,
+.undefiner-html-line {
+  min-height: 1.35em;
+}
+
+.undefiner-rich .undefiner-define-line {
+  padding-left: 0 !important;
+}
+
+.undefiner-line-content {
+  white-space: pre;
+}
+
+.undefiner-line-content .com {
+  color: #800;
+}
+
+.undefiner-line-content .kwd {
+  color: #008;
+  font-weight: 700;
+}
+
+.undefiner-line-content .lit {
+  color: #066;
+}
+
+.undefiner-line-content .pun {
+  color: #660;
+}
+
+.undefiner-line-content .str {
+  color: #080;
+}
+
+.undefiner-line-content .typ {
+  color: #606;
+  font-weight: 700;
+}
+
+.undefiner-html-line {
+  display: block;
+}
+
+.undefiner-rich .undefiner-line-changed {
+  background: rgba(255, 224, 130, 0.38) !important;
+}
+
+.undefiner-ace .ace_line.undefiner-line-changed {
+  background: rgba(255, 224, 130, 0.32) !important;
+  box-shadow: inset 0 0 0 9999px rgba(255, 224, 130, 0.18);
+}
+
+.undefiner-rich .undefiner-line-disabled .undefiner-line-content {
+  opacity: 0.58;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.undefiner-ace .ace_line.undefiner-line-disabled,
+.undefiner-ace .ace_line.undefiner-line-disabled * {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.undefiner-gutter {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 28px;
+  z-index: 20;
+}
+
+.undefiner-ace-gutter {
+  bottom: auto;
+  height: 100%;
+  overflow: hidden;
+  z-index: 30;
+}
+
+.undefiner-toggle {
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font: 700 14px/1 Arial, sans-serif;
+  height: 18px;
+  justify-content: center;
+  left: 5px;
+  padding: 0;
+  pointer-events: auto;
+  position: absolute;
+  width: 18px;
+}
+
+.undefiner-toggle-define[aria-pressed="false"] {
+  background: #d93025;
+}
+
+.undefiner-toggle-define[aria-pressed="true"] {
+  background: #188038;
+}
+
+.undefiner-toggle-typedef[aria-pressed="false"] {
+  background: #f29900;
+}
+
+.undefiner-toggle-typedef[aria-pressed="true"] {
+  background: #1a73e8;
+}
+
+.undefiner-toggle:hover {
+  filter: brightness(0.94);
+}

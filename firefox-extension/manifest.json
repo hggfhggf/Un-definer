@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Un-definer",
+  "version": "0.3.2",
+  "description": "Toggle competitive programming macros and typedefs inline.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "codeforces-undefiner@hggfhggf.github.io",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Codeforces Un-definer",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://codeforces.com/*",
+        "*://*.codeforces.com/*",
+        "*://codeforces.ru/*",
+        "*://*.codeforces.ru/*",
+        "*://atcoder.jp/*",
+        "*://*.atcoder.jp/*",
+        "*://qoj.ac/*",
+        "*://*.qoj.ac/*",
+        "*://oj.uz/*",
+        "*://*.oj.uz/*",
+        "*://codechef.com/*",
+        "*://*.codechef.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

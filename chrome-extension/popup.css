@@ -1,0 +1,46 @@
+body {
+  background: #fff;
+  color: #202124;
+  font: 13px/1.4 Arial, sans-serif;
+  margin: 0;
+  min-width: 230px;
+}
+
+.popup {
+  padding: 12px;
+}
+
+h1 {
+  font-size: 15px;
+  margin: 0 0 10px;
+}
+
+.site-list {
+  display: grid;
+  gap: 8px;
+}
+
+.site-row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.site-name {
+  font-weight: 600;
+}
+
+.switch {
+  height: 18px;
+  margin: 0;
+  width: 18px;
+}
+
+.hint {
+  border-top: 1px solid #e8eaed;
+  color: #5f6368;
+  font-size: 12px;
+  margin: 12px 0 0;
+  padding-top: 10px;
+}
