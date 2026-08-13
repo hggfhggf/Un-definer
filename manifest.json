@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Codeforces Un-definer",
+  "version": "0.1.8",
+  "description": "Toggle Codeforces #define macros inline.",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://codeforces.com/*",
+        "*://*.codeforces.com/*",
+        "*://codeforces.ru/*",
+        "*://*.codeforces.ru/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
